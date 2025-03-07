@@ -1,6 +1,6 @@
 # Movie Recommendation System
 
-A movie recommendation system built using KNN algorithm and deployed with Streamlit.
+A movie recommendation system built using KNN algorithm & SVD deployed with Streamlit.
 
 ## Requirements
 - Python 3.7+
