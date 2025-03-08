@@ -45,7 +45,7 @@ def _download_and_extract_zip():
         st.error(f"Error during download/extraction: {str(e)}")
         raise
 
-@st.cache
+@st.cache_data
 def load_data():
     """
     High-level function that downloads & extracts the zip (if needed),
@@ -84,7 +84,7 @@ def load_data():
         st.error(f"Error loading data: {str(e)}")
         raise
 
-@st.cache
+@st.cache_data
 def build_user_movie_matrix(ratings: pd.DataFrame):
     """
     Create and return a user–movie matrix from the ratings DataFrame.
@@ -92,7 +92,7 @@ def build_user_movie_matrix(ratings: pd.DataFrame):
     matrix = ratings.pivot_table(index="userId", columns="movieId", values="rating").fillna(0)
     return matrix
 
-@st.cache
+@st.cache_data
 def prepare_knn_data(user_movie_matrix):
     """
     Prepare data for k-NN based recommendations using scikit-learn.
